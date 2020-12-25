@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/chasestubblefield/advent-of-code-rs.svg?branch=master)](https://travis-ci.com/chasestubblefield/advent-of-code-rs)
 
-Advent of Code solutions implemented in Rust. Validate all solutions with
+[Advent of Code](https://adventofcode.com/) solutions implemented in Rust. Validate all solutions with
 ```
 cargo test
 ```
