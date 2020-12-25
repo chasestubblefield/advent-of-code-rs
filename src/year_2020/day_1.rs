@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-pub fn part1(input: &str) -> u32 {
+pub fn part_1(input: &str) -> u32 {
     let nums: Vec<u32> = input.lines()
         .map(|l| l.parse().expect("Parse error"))
         .collect();
@@ -9,7 +9,7 @@ pub fn part1(input: &str) -> u32 {
     x1 * x2
 }
 
-pub fn part2(input: &str) -> u32 {
+pub fn part_2(input: &str) -> u32 {
     let nums: Vec<u32> = input.lines()
     .map(|l| l.parse().expect("Parse error"))
     .collect();
@@ -52,34 +52,34 @@ fn find_three(nums: &Vec<u32>, sum: u32) -> Option<(u32, u32, u32)> {
 mod tests {
     const INPUT: &str = "./input/2020/day_1.txt";
     const SAMPLE: &str = "./input/2020/day_1_sample.txt";
-    const PART1_SAMPLE: u32 = 514579;
-    const PART1: u32 = 858496;
-    const PART2_SAMPLE: u32 = 241861950;
-    const PART2: u32 = 263819430;
+    const PART_1_SAMPLE: u32 = 514579;
+    const PART_1: u32 = 858496;
+    const PART_2_SAMPLE: u32 = 241861950;
+    const PART_2: u32 = 263819430;
 
     use std::fs;
 
     #[test]
-    fn part1_sample() {
+    fn part_1_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART1_SAMPLE, super::part1(&input));
+        assert_eq!(PART_1_SAMPLE, super::part_1(&input));
     }
 
     #[test]
-    fn part1() {
+    fn part_1() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART1, super::part1(&input));
+        assert_eq!(PART_1, super::part_1(&input));
     }
 
     #[test]
-    fn part2_sample() {
+    fn part_2_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART2_SAMPLE, super::part2(&input));
+        assert_eq!(PART_2_SAMPLE, super::part_2(&input));
     }
 
     #[test]
-    fn part2() {
+    fn part_2() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART2, super::part2(&input));
+        assert_eq!(PART_2, super::part_2(&input));
     }
 }

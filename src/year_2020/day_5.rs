@@ -1,11 +1,11 @@
 use std::collections::BTreeSet;
 
-pub fn part1(input: &str) -> u32 {
+pub fn part_1(input: &str) -> u32 {
     let ids: BTreeSet<u32> = input.lines().map(|l| seat_id(l)).collect();
     ids.into_iter().next_back().unwrap()
 }
 
-pub fn part2(input: &str) -> u32 {
+pub fn part_2(input: &str) -> u32 {
     let ids: BTreeSet<u32> = input.lines().map(|l| seat_id(l)).collect();
     let mut counter = *ids.iter().next().unwrap();
     for &id in ids.iter() {
@@ -30,20 +30,20 @@ fn seat_id(s: &str) -> u32 {
 #[cfg(test)]
 mod tests {
     const INPUT: &str = "./input/2020/day_5.txt";
-    const PART1: u32 = 883;
-    const PART2: u32 = 532;
+    const PART_1: u32 = 883;
+    const PART_2: u32 = 532;
 
     use std::fs;
 
     #[test]
-    fn part1() {
+    fn part_1() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART1, super::part1(&input));
+        assert_eq!(PART_1, super::part_1(&input));
     }
 
     #[test]
-    fn part2() {
+    fn part_2() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART2, super::part2(&input));
+        assert_eq!(PART_2, super::part_2(&input));
     }
 }

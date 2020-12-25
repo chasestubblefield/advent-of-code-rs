@@ -2,12 +2,12 @@ use lazy_static::lazy_static;
 use regex::Regex;
 use std::collections::HashMap;
 
-pub fn part1(input: &str) -> u32 {
+pub fn part_1(input: &str) -> u32 {
     let bc = BagContents::from_input(&input);
     bc.count_can_contain("shiny gold")
 }
 
-pub fn part2(input: &str) -> u32 {
+pub fn part_2(input: &str) -> u32 {
     let bc = BagContents::from_input(&input);
     bc.count_contents("shiny gold")
 }
@@ -86,34 +86,34 @@ fn parse_contents(contents: &str) -> Vec<(u32, &str)> {
 mod tests {
     const INPUT: &str = "./input/2020/day_7.txt";
     const SAMPLE: &str = "./input/2020/day_7_sample.txt";
-    const PART1_SAMPLE: u32 = 4;
-    const PART1: u32 = 179;
-    const PART2_SAMPLE: u32 = 32;
-    const PART2: u32 = 18925;
+    const PART_1_SAMPLE: u32 = 4;
+    const PART_1: u32 = 179;
+    const PART_2_SAMPLE: u32 = 32;
+    const PART_2: u32 = 18925;
 
     use std::fs;
 
     #[test]
-    fn part1_sample() {
+    fn part_1_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART1_SAMPLE, super::part1(&input));
+        assert_eq!(PART_1_SAMPLE, super::part_1(&input));
     }
 
     #[test]
-    fn part1_full() {
+    fn part_1_full() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART1, super::part1(&input));
+        assert_eq!(PART_1, super::part_1(&input));
     }
 
     #[test]
-    fn part2_sample() {
+    fn part_2_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART2_SAMPLE, super::part2(&input));
+        assert_eq!(PART_2_SAMPLE, super::part_2(&input));
     }
 
     #[test]
-    fn part2() {
+    fn part_2() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART2, super::part2(&input));
+        assert_eq!(PART_2, super::part_2(&input));
     }
 }

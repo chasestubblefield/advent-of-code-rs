@@ -1,6 +1,6 @@
 use regex::Regex;
 
-pub fn part1(input: &str) -> u32 {
+pub fn part_1(input: &str) -> u32 {
     let byr = Regex::new(r"byr:\S+").unwrap();
     let iyr = Regex::new(r"iyr:\S+").unwrap();
     let eyr = Regex::new(r"eyr:\S+").unwrap();
@@ -25,7 +25,7 @@ pub fn part1(input: &str) -> u32 {
     count
 }
 
-pub fn part2(input: &str) -> u32 {
+pub fn part_2(input: &str) -> u32 {
     let byr = Regex::new(r"\bbyr:(\d{4})\b").unwrap();
     let iyr = Regex::new(r"\biyr:(\d{4})\b").unwrap();
     let eyr = Regex::new(r"\beyr:(\d{4})\b").unwrap();
@@ -79,38 +79,38 @@ fn is_valid_height(s: &str, re: &Regex) -> bool {
 mod tests {
     const INPUT: &str = "./input/2020/day_4.txt";
     const SAMPLE: &str = "./input/2020/day_4_sample.txt";
-    const PART1_SAMPLE: u32 = 2;
-    const PART1: u32 = 213;
-    const PART2_SAMPLE: u32 = 2;
-    const PART2: u32 = 147;
+    const PART_1_SAMPLE: u32 = 2;
+    const PART_1: u32 = 213;
+    const PART_2_SAMPLE: u32 = 2;
+    const PART_2: u32 = 147;
 
     use std::fs;
 
     #[test]
-    fn part1_sample() {
+    fn part_1_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART1_SAMPLE, super::part1(&input));
+        assert_eq!(PART_1_SAMPLE, super::part_1(&input));
     }
 
     #[test]
-    fn part1() {
+    fn part_1() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART1, super::part1(&input));
+        assert_eq!(PART_1, super::part_1(&input));
     }
 
     #[test]
-    fn part2_sample() {
+    fn part_2_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART2_SAMPLE, super::part1(&input));
-        let input = fs::read_to_string("./input/2020/day_4_part2_invalid.txt").unwrap();
-        assert_eq!(0, super::part2(&input));
-        let input = fs::read_to_string("./input/2020/day_4_part2_valid.txt").unwrap();
-        assert_eq!(4, super::part2(&input));
+        assert_eq!(PART_2_SAMPLE, super::part_1(&input));
+        let input = fs::read_to_string("./input/2020/day_4_part_2_invalid.txt").unwrap();
+        assert_eq!(0, super::part_2(&input));
+        let input = fs::read_to_string("./input/2020/day_4_part_2_valid.txt").unwrap();
+        assert_eq!(4, super::part_2(&input));
     }
 
     #[test]
-    fn part2() {
+    fn part_2() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART2, super::part2(&input));
+        assert_eq!(PART_2, super::part_2(&input));
     }
 }

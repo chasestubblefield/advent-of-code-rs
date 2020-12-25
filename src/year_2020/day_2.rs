@@ -1,6 +1,6 @@
 use regex::Regex;
 
-pub fn part1(input: &str) -> usize {
+pub fn part_1(input: &str) -> usize {
     let re = Regex::new(r"^(\d+)-(\d+) ([a-z]): ([a-z]+)$").unwrap();
 
     input.lines().filter(|line| {
@@ -17,7 +17,7 @@ pub fn part1(input: &str) -> usize {
     }).count()
 }
 
-pub fn part2(input: &str) -> usize {
+pub fn part_2(input: &str) -> usize {
     let re = Regex::new(r"^(\d+)-(\d+) ([a-z]): ([a-z]+)$").unwrap();
 
     input.lines().filter(|line| {
@@ -39,34 +39,34 @@ pub fn part2(input: &str) -> usize {
 mod tests {
     const INPUT: &str = "./input/2020/day_2.txt";
     const SAMPLE: &str = "./input/2020/day_2_sample.txt";
-    const PART1_SAMPLE: usize = 2;
-    const PART1: usize = 645;
-    const PART2_SAMPLE: usize = 1;
-    const PART2: usize = 737;
+    const PART_1_SAMPLE: usize = 2;
+    const PART_1: usize = 645;
+    const PART_2_SAMPLE: usize = 1;
+    const PART_2: usize = 737;
 
     use std::fs;
 
     #[test]
-    fn part1_sample() {
+    fn part_1_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART1_SAMPLE, super::part1(&input));
+        assert_eq!(PART_1_SAMPLE, super::part_1(&input));
     }
 
     #[test]
-    fn part1() {
+    fn part_1() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART1, super::part1(&input));
+        assert_eq!(PART_1, super::part_1(&input));
     }
 
     #[test]
-    fn part2_sample() {
+    fn part_2_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART2_SAMPLE, super::part2(&input));
+        assert_eq!(PART_2_SAMPLE, super::part_2(&input));
     }
 
     #[test]
-    fn part2() {
+    fn part_2() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART2, super::part2(&input));
+        assert_eq!(PART_2, super::part_2(&input));
     }
 }

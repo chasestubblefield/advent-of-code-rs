@@ -1,1 +1,1 @@
-pub mod twenty_twenty;
+pub mod year_2020;

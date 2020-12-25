@@ -1,11 +1,11 @@
 use array2d::Array2D;
 
-pub fn part1(input: &str) -> u32 {
+pub fn part_1(input: &str) -> u32 {
     let grid = grid_from_input(input);
     count_slope(&grid, 3, 1)
 }
 
-pub fn part2(input: &str) -> u32 {
+pub fn part_2(input: &str) -> u32 {
     let grid = grid_from_input(input);
 
     let count1 = count_slope(&grid, 1, 1);
@@ -47,34 +47,34 @@ fn count_slope(grid: &Array2D<char>, right: usize, down: usize) -> u32 {
 mod tests {
     const INPUT: &str = "./input/2020/day_3.txt";
     const SAMPLE: &str = "./input/2020/day_3_sample.txt";
-    const PART1_SAMPLE: u32 = 7;
-    const PART1: u32 = 254;
-    const PART2_SAMPLE: u32 = 336;
-    const PART2: u32 = 1666768320;
+    const PART_1_SAMPLE: u32 = 7;
+    const PART_1: u32 = 254;
+    const PART_2_SAMPLE: u32 = 336;
+    const PART_2: u32 = 1666768320;
 
     use std::fs;
 
     #[test]
-    fn part1_sample() {
+    fn part_1_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART1_SAMPLE, super::part1(&input));
+        assert_eq!(PART_1_SAMPLE, super::part_1(&input));
     }
 
     #[test]
-    fn part1() {
+    fn part_1() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART1, super::part1(&input));
+        assert_eq!(PART_1, super::part_1(&input));
     }
 
     #[test]
-    fn part2_sample() {
+    fn part_2_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART2_SAMPLE, super::part2(&input));
+        assert_eq!(PART_2_SAMPLE, super::part_2(&input));
     }
 
     #[test]
-    fn part2() {
+    fn part_2() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART2, super::part2(&input));
+        assert_eq!(PART_2, super::part_2(&input));
     }
 }

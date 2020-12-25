@@ -1,12 +1,12 @@
 use std::collections::HashSet;
 
-pub fn part1(input: &str) -> i32 {
+pub fn part_1(input: &str) -> i32 {
     let program = input.lines().map(|l| Instruction::from_str(l)).collect();
     let (final_value, _terminated) = execute_program(&program);
     final_value
 }
 
-pub fn part2(input: &str) -> i32 {
+pub fn part_2(input: &str) -> i32 {
     let mut program: Vec<_> = input.lines().map(|l| Instruction::from_str(l)).collect();
     let locations = get_locations(&program);
     for i in locations {
@@ -114,34 +114,34 @@ impl Instruction {
 mod tests {
     const INPUT: &str = "./input/2020/day_8.txt";
     const SAMPLE: &str = "./input/2020/day_8_sample.txt";
-    const PART1_SAMPLE: i32 = 5;
-    const PART1: i32 = 1451;
-    const PART2_SAMPLE: i32 = 8;
-    const PART2: i32 = 1160;
+    const PART_1_SAMPLE: i32 = 5;
+    const PART_1: i32 = 1451;
+    const PART_2_SAMPLE: i32 = 8;
+    const PART_2: i32 = 1160;
 
     use std::fs;
 
     #[test]
-    fn part1_sample() {
+    fn part_1_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART1_SAMPLE, super::part1(&input));
+        assert_eq!(PART_1_SAMPLE, super::part_1(&input));
     }
 
     #[test]
-    fn part1() {
+    fn part_1() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART1, super::part1(&input));
+        assert_eq!(PART_1, super::part_1(&input));
     }
 
     #[test]
-    fn part2_sample() {
+    fn part_2_sample() {
         let input = fs::read_to_string(SAMPLE).unwrap();
-        assert_eq!(PART2_SAMPLE, super::part2(&input));
+        assert_eq!(PART_2_SAMPLE, super::part_2(&input));
     }
 
     #[test]
-    fn part2() {
+    fn part_2() {
         let input = fs::read_to_string(INPUT).unwrap();
-        assert_eq!(PART2, super::part2(&input));
+        assert_eq!(PART_2, super::part_2(&input));
     }
 }
