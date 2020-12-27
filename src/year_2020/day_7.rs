@@ -100,7 +100,7 @@ mod tests {
     }
 
     #[test]
-    fn part_1_full() {
+    fn part_1() {
         let input = fs::read_to_string(INPUT).unwrap();
         assert_eq!(PART_1, super::part_1(&input));
     }

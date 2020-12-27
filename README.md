@@ -9,5 +9,5 @@ cargo test
 
 The general API is
 ```
-fn advent_of_code::year_2020::day_1::part_1(input :&str) -> u32
+fn advent_of_code::year_2020::day_1::part_1(input: &str) -> u32
 ```
