@@ -1,6 +1,6 @@
 # advent-of-code-rs
 
-[![Build Status](https://travis-ci.com/chasestubblefield/advent-of-code-rs.svg?branch=master)](https://travis-ci.com/chasestubblefield/advent-of-code-rs)
+![Build Status](https://github.com/chasestubblefield/advent-of-code-rs/actions/workflows/ci.yml/badge.svg)
 
 [Advent of Code](https://adventofcode.com/) solutions implemented in Rust. Validate all solutions with
 ```
