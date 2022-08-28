@@ -1,13 +1,13 @@
 use std::collections::HashSet;
 
 pub fn part_1(input: &str) -> i32 {
-    let program = input.lines().map(|l| Instruction::from_str(l)).collect();
+    let program: Vec<Instruction> = input.lines().map(Instruction::from_str).collect();
     let (final_value, _terminated) = execute_program(&program);
     final_value
 }
 
 pub fn part_2(input: &str) -> i32 {
-    let mut program: Vec<_> = input.lines().map(|l| Instruction::from_str(l)).collect();
+    let mut program: Vec<_> = input.lines().map(Instruction::from_str).collect();
     let locations = get_locations(&program);
     for i in locations {
         {
@@ -26,7 +26,7 @@ pub fn part_2(input: &str) -> i32 {
     panic!("Failed to find terminating program");
 }
 
-fn execute_program(program: &Vec<Instruction>) -> (i32, bool) {
+fn execute_program(program: &[Instruction]) -> (i32, bool) {
     let mut pc: usize = 0;
     let mut acc: i32 = 0;
     let mut executed: HashSet<usize> = HashSet::new();
@@ -40,7 +40,7 @@ fn execute_program(program: &Vec<Instruction>) -> (i32, bool) {
     (acc, false)
 }
 
-fn get_locations(program: &Vec<Instruction>) -> Vec<usize> {
+fn get_locations(program: &[Instruction]) -> Vec<usize> {
     let mut result = Vec::new();
     let mut offset = 0;
     let mut iter = program.iter();
@@ -76,7 +76,7 @@ struct Instruction {
 
 impl Instruction {
     fn from_str(line: &str) -> Instruction {
-        let mut split_iter = line.split(" ");
+        let mut split_iter = line.split(' ');
         let op = Op::from_str(split_iter.next().unwrap());
         let arg = split_iter.next().unwrap().parse().unwrap();
         Instruction { op, arg }

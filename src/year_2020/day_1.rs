@@ -18,7 +18,7 @@ pub fn part_2(input: &str) -> u32 {
     x1 * x2 * x3
 }
 
-fn find_two(nums: &Vec<u32>, sum: u32) -> Option<(u32, u32)> {
+fn find_two(nums: &[u32], sum: u32) -> Option<(u32, u32)> {
     let mut seen = HashSet::new();
 
     for &x in nums {
@@ -38,7 +38,7 @@ fn find_two(nums: &Vec<u32>, sum: u32) -> Option<(u32, u32)> {
     None
 }
 
-fn find_three(nums: &Vec<u32>, sum: u32) -> Option<(u32, u32, u32)> {
+fn find_three(nums: &[u32], sum: u32) -> Option<(u32, u32, u32)> {
     for &x1 in nums {
         if let Some((x2, x3)) = find_two(nums, sum - x1) {
             return Some((x1, x2, x3));

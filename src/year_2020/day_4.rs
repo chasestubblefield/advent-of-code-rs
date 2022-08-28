@@ -66,8 +66,8 @@ fn is_valid_height(s: &str, re: &Regex) -> bool {
             let num: usize = caps[1].parse().unwrap();
             let unit = &caps[2];
             match unit {
-                "cm" => 150 <= num && num <= 193,
-                "in" => 59 <= num && num <= 76,
+                "cm" => (150..=193).contains(&num),
+                "in" => (59..=76).contains(&num),
                 _ => false,
             }
         }

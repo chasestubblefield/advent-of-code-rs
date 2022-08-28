@@ -21,7 +21,7 @@ pub fn part_2(input: &str, target: u64) -> u64 {
     for window_size in 2..list.len() {
         let mut iter = list.windows(window_size);
         let mut window = iter.next().unwrap();
-        let mut sum = window.iter().fold(0, |acc, x| acc + x);
+        let mut sum: u64 = window.iter().sum();
         loop {
             if sum == target {
                 return window.iter().min().unwrap() + window.iter().max().unwrap();

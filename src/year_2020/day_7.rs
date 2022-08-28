@@ -3,12 +3,12 @@ use regex::Regex;
 use std::collections::HashMap;
 
 pub fn part_1(input: &str) -> u32 {
-    let bc = BagContents::from_input(&input);
+    let bc = BagContents::from_input(input);
     bc.count_can_contain("shiny gold")
 }
 
 pub fn part_2(input: &str) -> u32 {
-    let bc = BagContents::from_input(&input);
+    let bc = BagContents::from_input(input);
     bc.count_contents("shiny gold")
 }
 

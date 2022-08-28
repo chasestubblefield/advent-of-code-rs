@@ -1,12 +1,12 @@
 use std::collections::BTreeSet;
 
 pub fn part_1(input: &str) -> u32 {
-    let ids: BTreeSet<u32> = input.lines().map(|l| seat_id(l)).collect();
+    let ids: BTreeSet<u32> = input.lines().map(seat_id).collect();
     ids.into_iter().next_back().unwrap()
 }
 
 pub fn part_2(input: &str) -> u32 {
-    let ids: BTreeSet<u32> = input.lines().map(|l| seat_id(l)).collect();
+    let ids: BTreeSet<u32> = input.lines().map(seat_id).collect();
     let mut counter = *ids.iter().next().unwrap();
     for &id in ids.iter() {
         if id != counter {
